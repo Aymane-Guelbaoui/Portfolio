@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Saira";
+    src: url(../src/assets/fonts/Saira/static/Saira-Light.ttf);
+}
+
+* {
+    font-family: "Saira", sans-serif;
+}
+
+body[data-theme="light"] {
+    background-color: #efefef;
+    color: black;
+    --nav-bg: #efefef;
+    --nav-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+body[data-theme="dark"] {
+    background-color: black;
+    color: white;
+    --nav-bg: #111;
+    --nav-shadow: 0 10px 15px rgba(255,255,255,0.08);
+}
+
+button {
+    background-color: black;
+    color: antiquewhite;
+}
+
+h3 {
+    color: var(--titreColor);
+}
