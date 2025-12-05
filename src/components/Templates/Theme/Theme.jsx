@@ -16,8 +16,8 @@ export default function Theme() {
 
     return (
         <div className="">
-            <button className="p-1 rounded-4xl" onClick={ToggleTheme}>
-                {theme === "light" ? <Moon size={10}/> : <Sun size={10}/> }
+            <button className="p-1 rounded-4xl" onClick={ToggleTheme} style={{marginRight:"15px"}}>
+                {theme === "light" ? <Moon size={18}/> : <Sun size={18}/> }
 
             </button>
         </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider, NavLink, Outlet } from "react-router-dom";
 
-import { Home } from 'lucide-react';
+import { Home as HomeIcon } from 'lucide-react';
+import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact';
 import About from '../../Pages/About';
 import Theme from '../Theme/Theme';
@@ -34,25 +35,25 @@ function Layout() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
-      <nav className="w-full" style={{ boxShadow: "var(--nav-shadow)" }}>
-        <div className="max-w-7xl mx-auto px-4 py-1 flex items-center justify-between">
+    <div className="flex flex-col w-full ">
+      <nav className="w-full relative" style={{ boxShadow: "var(--nav-shadow)" }}>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between ">
 
           <NavLink to="/" className="w-12">
             <img
               src={theme === "dark" ? LogoDark : LogoLight}
               alt="Logo"
-              className="w-6 h-auto transition-all duration-300"
+              className="w-12 h-auto transition-all duration-300"style={{paddingLeft:"15px"}}
             />
           </NavLink>
 
-          <div className="hidden md:flex gap-8 justify-center flex-1">
-            <NavLink to="/" className="hover:text-gray-300 text-xs">Home</NavLink>
-            <NavLink to="/about" className="hover:text-gray-300 text-xs">About</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-300 text-xs">Contact</NavLink>
+          <div className="hidden md:flex gap-8 justify-center flex-1 md:py-4 py-4">
+            <NavLink to="/" className="hover:text-gray-300 text-base">Home</NavLink>
+            <NavLink to="/about" className="hover:text-gray-300 text-base">About</NavLink>
+            <NavLink to="/contact" className="hover:text-gray-300 text-base">Contact</NavLink>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:block ">
             <Theme />
           </div>
 
@@ -68,16 +69,21 @@ function Layout() {
 
     
         {isMobile && open && (
-          <div 
-            className="flex flex-col gap-4 px-4 py-4"
-            style={{ backgroundColor: "var(--nav-bg)" }}
-          >
-            <NavLink to="/" className="hover:text-gray-300 text-lg" onClick={() => setOpen(false)}>Home</NavLink>
-            <NavLink to="/about" className="hover:text-gray-300 text-lg" onClick={() => setOpen(false)}>About</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-300 text-lg" onClick={() => setOpen(false)}>Contact</NavLink>
-            <Theme />
-          </div>
-        )}
+            <div 
+              className="flex flex-col gap-1 px-4 py-4 absolute top-full left-0 right-0 z-40"
+              style={{ 
+                backgroundColor: "var(--nav-bg)",
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
+              }}
+            >
+              <NavLink to="/" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
+              <NavLink to="/about" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
+              <NavLink to="/contact" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
+              <div className="pt-2">
+                <Theme />
+              </div>
+            </div>
+          )}
       </nav>
 
       <div className="p-6">

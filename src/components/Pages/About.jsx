@@ -1,7 +1,13 @@
 import React from 'react'
+import Slider from './Slider/Slider'
 
 export default function About() {
   return (
-    <div>About</div>
+    <>
+    <Slider  text="About Slide"
+          nextPath="/contact"
+          prevPath="/home"/>
+      
+    </>
   )
 }

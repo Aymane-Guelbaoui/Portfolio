@@ -1,7 +1,11 @@
-import React from 'react'
+import Slider from "./Slider/Slider";
 
 export default function Contact() {
   return (
-    <div>Contact</div>
-  )
+    <Slider
+      text="Contact Slide"
+      nextPath="/"
+      prevPath="/about"
+    />
+  );
 }
