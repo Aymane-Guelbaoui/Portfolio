@@ -43,7 +43,7 @@ function Layout() {
             <img
               src={theme === "dark" ? LogoDark : LogoLight}
               alt="Logo"
-              className="w-12 h-auto transition-all duration-300"style={{paddingLeft:"15px"}}
+              className="w-10 h-auto transition-all duration-300 relative left-3"
             />
           </NavLink>
 
