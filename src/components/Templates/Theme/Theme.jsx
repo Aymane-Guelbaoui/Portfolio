@@ -17,7 +17,7 @@ export default function Theme() {
     return (
         <div className="">
             <button className="p-1 rounded-4xl relative right-3" onClick={ToggleTheme}>
-                {theme === "light" ? <Moon size={20}/> : <Sun size={20}/> }
+                {theme === "light" ? <Moon size={30}/> : <Sun size={30}/> }
 
             </button>
         </div>
