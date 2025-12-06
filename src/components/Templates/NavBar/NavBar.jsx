@@ -35,30 +35,39 @@ function Layout() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full ">
+    <div className="flex flex-col w-full">
       <nav className="w-full relative" style={{ boxShadow: "var(--nav-shadow)" }}>
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between ">
-
-          <NavLink to="/" className="w-12">
-            <img
-              src={theme === "dark" ? LogoDark : LogoLight}
-              alt="Logo"
-              className="w-14 h-auto transition-all duration-300 relative left-3"
-            />
-          </NavLink>
-
-          <div className="hidden md:flex gap-8 justify-center flex-1 md:py-4 py-4">
-            <NavLink to="/" className="hover:text-gray-300 text-base">Home</NavLink>
-            <NavLink to="/about" className="hover:text-gray-300 text-base">About</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-300 text-base">Contact</NavLink>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center">
+          
+          {/* Logo on the left - fixed width */}
+          <div className="w-14">
+            <NavLink to="/">
+              <img
+                src={theme === "dark" ? LogoDark : LogoLight}
+                alt="Logo"
+                className="w-full h-auto transition-all duration-300"
+              />
+            </NavLink>
           </div>
 
-          <div className="hidden md:block ">
+          {/* Spacer to push navigation to center */}
+          <div className="hidden md:block flex-1"></div>
+
+          {/* Centered navigation links */}
+          <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gap-8">
+            <NavLink to="/" className="hover:text-gray-300 text-base whitespace-nowrap">Home</NavLink>
+            <NavLink to="/about" className="hover:text-gray-300 text-base whitespace-nowrap">About</NavLink>
+            <NavLink to="/contact" className="hover:text-gray-300 text-base whitespace-nowrap">Contact</NavLink>
+          </div>
+
+          {/* Theme toggle on the right */}
+          <div className="hidden md:flex absolute right-3">
             <Theme />
           </div>
 
+          {/* Mobile menu button */}
           <button 
-            className="md:hidden z-50 focus:outline-none"
+            className="md:hidden z-50 focus:outline-none absolute right-3"
             onClick={() => setOpen(!open)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
@@ -67,23 +76,23 @@ function Layout() {
           </button>
         </div>
 
-    
+        {/* Mobile menu */}
         {isMobile && open && (
-            <div 
-              className="flex flex-col gap-1 px-4 py-4 absolute top-full left-0 right-0 z-40"
-              style={{ 
-                backgroundColor: "var(--nav-bg)",
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
-              }}
-            >
-              <NavLink to="/" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
-              <NavLink to="/about" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
-              <NavLink to="/contact" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
-              <div className="pt-2">
-                <Theme />
-              </div>
+          <div 
+            className="flex flex-col gap-1 px-4 py-4 absolute top-full left-0 right-0 z-40"
+            style={{ 
+              backgroundColor: "var(--nav-bg)",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
+            }}
+          >
+            <NavLink to="/" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
+            <NavLink to="/about" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/contact" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
+            <div className="pt-2">
+              <Theme />
             </div>
-          )}
+          </div>
+        )}
       </nav>
 
       <div className="p-6">

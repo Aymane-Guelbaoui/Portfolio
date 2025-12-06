@@ -9,14 +9,14 @@ export default function Slider({ text, nextPath, prevPath }) {
 
       <button
         onClick={() => navigate(prevPath)}
-        className="absolute left-5 bottom-10 text-4xl bg-black bg-opacity-40 text-white rounded-full px-3 py-1 cursor-pointer"
+        className="absolute left-5 bottom-14 text-4xl bg-black bg-opacity-40 text-white rounded-full px-3 py-1 cursor-pointer"
       >
         ⬅
       </button>
 
       <button
         onClick={() => navigate(nextPath)}
-        className="absolute right-5 bottom-10 text-4xl bg-black bg-opacity-40 text-white rounded-full px-3 py-1 cursor-pointer"
+        className="absolute right-5 bottom-14 text-4xl bg-black bg-opacity-40 text-white rounded-full px-3 py-1 cursor-pointer"
       >
         ➡
       </button>
