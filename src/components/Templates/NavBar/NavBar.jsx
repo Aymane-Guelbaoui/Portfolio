@@ -39,8 +39,8 @@ function Layout() {
       <nav className="w-full relative" style={{ boxShadow: "var(--nav-shadow)" }}>
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center">
           
-          {/* Logo on the left - fixed width */}
-          <div className="w-14">
+          
+          <div className="w-12 absolute">
             <NavLink to="/">
               <img
                 src={theme === "dark" ? LogoDark : LogoLight}
@@ -50,22 +50,22 @@ function Layout() {
             </NavLink>
           </div>
 
-          {/* Spacer to push navigation to center */}
+          
           <div className="hidden md:block flex-1"></div>
 
-          {/* Centered navigation links */}
+          
           <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gap-8">
             <NavLink to="/" className="hover:text-gray-300 text-base whitespace-nowrap">Home</NavLink>
             <NavLink to="/about" className="hover:text-gray-300 text-base whitespace-nowrap">About</NavLink>
             <NavLink to="/contact" className="hover:text-gray-300 text-base whitespace-nowrap">Contact</NavLink>
           </div>
 
-          {/* Theme toggle on the right */}
+          
           <div className="hidden md:flex absolute right-3">
             <Theme />
           </div>
 
-          {/* Mobile menu button */}
+          
           <button 
             className="md:hidden z-50 focus:outline-none absolute right-3"
             onClick={() => setOpen(!open)}
