@@ -1,12 +1,10 @@
 import React from 'react'
-import Slider from '../Slider/Slider'
+import Hero from '../../Templates/Hero/Hero'
 
 export default function Home() {
   return (
     <>
-    <Slider  text="Home Slide"
-      nextPath="/about"
-      prevPath="/contact"/>
+    <Hero/>
     </>
   )
 }

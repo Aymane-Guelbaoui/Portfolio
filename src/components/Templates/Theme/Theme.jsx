@@ -6,7 +6,7 @@ export default function Theme() {
     const[theme, setTheme] = useState(localStorage.getItem('theme'))
     
     const ToggleTheme = () =>{
-        setTheme(theme == "light" ? "dark" : "light")
+        setTheme(theme == "dark" ? "light" : "dark")
     }
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export default function Theme() {
     return (
         <div className="">
             <button className="p-1 rounded-4xl" onClick={ToggleTheme}>
-                {theme === "light" ? <Moon size={30}/> : <Sun size={30}/> }
+                {theme === "dark" ? <Moon size={30}/> : <Sun size={30}/> }
 
             </button>
         </div>

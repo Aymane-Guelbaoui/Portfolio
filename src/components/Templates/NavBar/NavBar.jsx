@@ -6,6 +6,7 @@ import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact';
 import About from '../../Pages/About';
 import Theme from '../Theme/Theme';
+import Projects from '../../Pages/Projects';
 
 import LogoLight from "/Images/logo1.png"; 
 import LogoDark from "/Images/logo2.png";
@@ -36,17 +37,13 @@ function Layout() {
 
   return (
     <div className="flex flex-col w-full">
-      <nav className="w-full relative" style={{ boxShadow: "var(--nav-shadow)" }}>
+      <nav className="w-full relative h-16" style={{ boxShadow: "var(--nav-shadow)" }}>
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center">
           
           
-          <div className="w-12 absolute">
+          <div className="absolute top-3 left-4">
             <NavLink to="/">
-              <img
-                src={theme === "dark" ? LogoDark : LogoLight}
-                alt="Logo"
-                className="w-full h-auto transition-all duration-300"
-              />
+              <h1 className="text-4xl font-extrabold">AG</h1>
             </NavLink>
           </div>
 
@@ -55,19 +52,22 @@ function Layout() {
 
           
           <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gap-8">
-            <NavLink to="/" className="hover:text-gray-300 text-base whitespace-nowrap">Home</NavLink>
-            <NavLink to="/about" className="hover:text-gray-300 text-base whitespace-nowrap">About</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-300 text-base whitespace-nowrap">Contact</NavLink>
+            <NavLink to="/" className="hover:text-amber-700 text-base whitespace-nowrap">Home</NavLink>
+            <NavLink to="/about" className="hover:text-amber-700 text-base whitespace-nowrap">About</NavLink>
+            <NavLink to="/projects" className="hover:text-amber-700 text-base whitespace-nowrap">Projects</NavLink>
+            <NavLink to="/contact" className="hover:text-amber-700 text-base whitespace-nowrap">Contact</NavLink>
+            
+            
           </div>
 
           
-          <div className="hidden md:flex absolute right-3">
+          <div className="hidden md:flex absolute top-3 right-4">
             <Theme />
           </div>
 
           
           <button 
-            className="md:hidden z-50 focus:outline-none absolute right-3"
+            className="md:hidden z-50 focus:outline-none absolute top-3 right-3"
             onClick={() => setOpen(!open)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
@@ -85,17 +85,19 @@ function Layout() {
               boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
             }}
           >
-            <NavLink to="/" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
-            <NavLink to="/about" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-300 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
+            <NavLink to="/" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
+            <NavLink to="/about" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/projects" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Projects</NavLink>
+            <NavLink to="/contact" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
             <div className="pt-2">
               <Theme />
             </div>
           </div>
+          
         )}
       </nav>
 
-      <div className="p-6">
+      <div className="">
         <Outlet />
       </div>
     </div>
@@ -110,6 +112,7 @@ export default function NavBar() {
       children: [
         { index: true, element: <Home /> },
         { path: "about", element: <About /> },
+        { path: "projects", element: <Projects /> },
         { path: "contact", element: <Contact /> },
       ],
     },
