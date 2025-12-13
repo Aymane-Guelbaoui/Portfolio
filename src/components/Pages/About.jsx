@@ -6,7 +6,7 @@ export default function About() {
     <>
     <Slider  text="About Slide"
           nextPath="/contact"
-          prevPath="/home">
+          prevPath="/"/>
       
     </>
   )
