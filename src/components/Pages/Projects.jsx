@@ -5,20 +5,20 @@ const projects = [
   {
     id: 1,
     img: "/Images/Ecom-img.png",
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store with cart functionality, payment integration, and admin dashboard.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    liveUrl: '#',
-    githubUrl: '#',
+    title: 'Clothing website',
+    description: 'An online store for women’s clothing',
+    technologies: ['React'],
+    liveUrl: 'https://ecom-project-phi.vercel.app/',
+    githubUrl: 'https://github.com/Aymane-Guelbaoui/Ecom-Project',
   },
   {
     id: 2,
     img: "/Images/Ecom-img.png",
-    title: 'Task Management App',
-    description: 'A collaborative task management tool with real-time updates, drag-and-drop, and team features.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    liveUrl: '#',
-    githubUrl: '#',
+    title: 'Social media app',
+    description: 'A social platform with posts, comments, likes, real-time chat, and user authentication.',
+    technologies: ['React','Django'],
+    liveUrl: 'https://social-media-website-ten-snowy.vercel.app/login',
+    githubUrl: 'https://github.com/Aymane-Guelbaoui/social_media_website',
   },
   {
     id: 3,
@@ -28,16 +28,7 @@ const projects = [
     technologies: ['React', 'OpenWeather API', 'Tailwind CSS', 'Chart.js'],
     liveUrl: '#',
     githubUrl: '#',
-  },
-  {
-    id: 4,
-    img: "/Images/Ecom-img.png",
-    title: 'Social Media Clone',
-    description: 'A social platform with posts, comments, likes, real-time chat, and user authentication.',
-    technologies: ['React', 'Firebase', 'Redux', 'Socket.io'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
+  }
 ];
 
 const Projects = () => {
@@ -90,7 +81,7 @@ const Projects = () => {
           </div>
 
           {/* Dots */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-3 mt-0">
             {projects.map((_, i) => (
               <button
                 key={i}
@@ -127,11 +118,11 @@ const ProjectCard = ({ project }) => (
     </div>
 
     <div className="p-6">
-      <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
+      <h3 className="text-2xl font-semibold mb-1">{project.title}</h3>
 
-      <p className="text-gray-600 mb-6">{project.description}</p>
+      <p className="text-gray-600 mb-1">{project.description}</p>
 
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-2">
         {project.technologies.map((tech) => (
           <span key={tech} className="text-amber-700 text-sm">
             {tech}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, NavLink, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, NavLink, Outlet, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 import { Home as HomeIcon } from 'lucide-react';
 import Home from '../../Pages/Home/Home';
@@ -98,7 +100,7 @@ function Layout() {
       </nav>
 
       <div className="">
-        <Outlet />
+        <Outlet/>
       </div>
     </div>
   );

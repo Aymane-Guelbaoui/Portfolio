@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Hero = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -32,19 +34,20 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
+              <Link to="/projects">
               <button
-                onClick={() => scrollToSection('#projects')}
-                className="w-30 h-10 bg-amber-700 rounded-md hover:bg-amber-800 transition"
+                className="w-30 h-10 bg-amber-700 rounded-md hover:bg-amber-800"
               >
                 View My Work
               </button>
-
+              </Link>
+              <Link to="/contact">
               <button
-                onClick={() => scrollToSection('#contact')}
-                className="w-30 h-10 bg-amber-700 rounded-md hover:bg-amber-800 transition"
+                className="w-30 h-10 bg-amber-700 rounded-md hover:bg-amber-800"
               >
                 Get In Touch
               </button>
+              </Link>
             </div>
           </div>
 
