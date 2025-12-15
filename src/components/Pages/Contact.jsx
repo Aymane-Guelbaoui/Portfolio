@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react'; 
+import emailjs from '@emailjs/browser';
 import { MapPin, Mail, Send, Linkedin, Github, Twitter } from 'lucide-react';
 
 const Contact = () => {
-    const socials = [
+  const socials = [
     {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/aymane-guelbaoui',
@@ -28,13 +29,29 @@ const Contact = () => {
 
   const [success, setSuccess] = useState(false);
 
+  
+  const formRef = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setSuccess(true);
-    setFormData({ name: '', email: '', message: '' });
+    
+    emailjs
+      .sendForm(
+        'service_y94zw9r',     
+        'template_akrgh3p',    
+        formRef.current,
+        'pyl6BTLvL9uKAgtN2'      
+      )
+      .then(() => {
+        setSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
 
-    setTimeout(() => setSuccess(false), 4000);
+        setTimeout(() => setSuccess(false), 4000);
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+      });
   };
 
   const handleChange = (e) => {
@@ -47,7 +64,6 @@ const Contact = () => {
   return (
     <section id="contact" className="min-h-screen flex items-center py-20">
       <div className="max-w-6xl mx-auto px-6 w-full">
-        {/* Title */}
         <h2 className="text-4xl font-bold text-center mb-16">
           Get In <span className="text-amber-600">Touch</span>
         </h2>
@@ -61,7 +77,6 @@ const Contact = () => {
               </h3>
 
               <div className="space-y-5">
-                {/* Location */}
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-lg bg-gray-100">
                     <MapPin className="text-amber-600" size={20} />
@@ -72,7 +87,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-lg bg-gray-100">
                     <Mail className="text-amber-600" size={20} />
@@ -90,7 +104,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Socials */}
             <div>
               <h3 className="text-xl font-semibold uppercase tracking-wide mb-4">
                 Follow Me
@@ -110,14 +123,12 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-
             </div>
           </div>
 
           {/* Contact Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Success Message */}
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {success && (
                 <div className="rounded-lg bg-amber-100 text-amber-800 px-4 py-3 text-sm">
                   Message sent successfully! I’ll get back to you soon.
@@ -128,7 +139,7 @@ const Contact = () => {
                 <label className="block text-sm font-medium mb-2">Name</label>
                 <input
                   type="text"
-                  name="name"
+                  name="name" 
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -141,7 +152,7 @@ const Contact = () => {
                 <label className="block text-sm font-medium mb-2">Email</label>
                 <input
                   type="email"
-                  name="email"
+                  name="email" 
                   value={formData.email}
                   onChange={handleChange}
                   required
