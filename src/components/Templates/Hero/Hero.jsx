@@ -1,17 +1,10 @@
 import { Link } from "react-router";
 
 const Hero = () => {
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-20"
+      className="min-h-screen flex items-center justify-center pt-1"
     >
       <div className="max-w-6xl w-full px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">

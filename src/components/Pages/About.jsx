@@ -7,7 +7,7 @@ const certificates = [
   { id: 4, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-2.png" }
 ];
 
-const About = () => {
+export default function About() {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
@@ -58,5 +58,5 @@ const About = () => {
   );
 };
 
-export default About;
+
 

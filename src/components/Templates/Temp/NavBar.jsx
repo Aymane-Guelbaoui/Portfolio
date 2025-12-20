@@ -10,8 +10,6 @@ import About from '../../Pages/About';
 import Theme from '../Theme/Theme';
 import Projects from '../../Pages/Projects';
 
-import LogoLight from "/Images/logo1.png"; 
-import LogoDark from "/Images/logo2.png";
 
 function Layout() {
   const [open, setOpen] = useState(false);
