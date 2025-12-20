@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const certificates = [
-  { id: 1, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-2.png" },
-  { id: 2, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-2.png" },
-  { id: 3, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-2.png" },
-  { id: 4, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-2.png" }
+  { id: 1, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-1.png" },
+  { id: 2, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-2.png" },
+  { id: 3, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-4.png" },
+  { id: 4, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-3.png" }
 ];
 
 export default function About() {
