@@ -43,8 +43,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center">
-      <div className="max-w-5xl w-full px-6">
+    <section id="projects" className="mt-6 flex items-center justify-center">
+      <div className="max-w-4xl w-full px-6">
         <h2 className="text-4xl font-bold text-center mb-2">
           My <span className="text-amber-700">Projects</span>
         </h2>

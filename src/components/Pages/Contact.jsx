@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center py-20">
+    <section id="contact" className="mt-20 flex items-center">
       <div className="max-w-6xl mx-auto px-6 w-full">
         <h2 className="text-4xl font-bold text-center mb-16">
           Get In <span className="text-amber-600">Touch</span>
@@ -95,7 +95,7 @@ const Contact = () => {
                     <p className="text-sm text-gray-500">Email</p>
                     <a
                       href="mailto:aymaneguelbaoui@gmail.com"
-                      className="font-medium hover:text-amber-600 transition"
+                      className="font-medium hover:text-amber-600 active:text-amber-600 transition"
                     >
                       aymaneguelbaoui@gmail.com
                     </a>
@@ -109,7 +109,7 @@ const Contact = () => {
                 Follow Me
               </h3>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 ">
                 {socials.map(({ href, icon: Icon, label }) => (
                   <a
                     key={label}
@@ -117,9 +117,9 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="p-3 rounded-lg bg-gray-100 hover:bg-amber-100 text-gray-700 hover:text-amber-600 transition"
+                    className="p-3 rounded-lg bg-gray-100 hover:bg-amber-100 text-gray-700 hover:text-amber-600 transition active:text-amber-600 "
                   >
-                    <Icon size={22} />
+                    <Icon size={22} className="active:text-amber-600 active:bg-amber-100"/>
                   </a>
                 ))}
               </div>
@@ -176,7 +176,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 rounded-lg bg-amber-600 text-white py-3 font-medium hover:bg-amber-700 transition"
+                className="w-full flex items-center mb-8 justify-center gap-2 rounded-lg bg-amber-600 text-white py-3 font-medium hover:bg-amber-700 transition"
               >
                 <Send size={18} />
                 Send Message

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="py-6 bg-background">
+    <footer className="relative lg:fixed lg:bottom-0 lg:left-0 lg:right-0 py-6 " style={{ boxShadow: "var(--foot-shadow)" }}>
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <a

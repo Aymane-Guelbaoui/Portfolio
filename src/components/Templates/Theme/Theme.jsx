@@ -15,9 +15,9 @@ export default function Theme() {
     },[theme])
 
     return (
-        <div className="">
+        <div className="hover:text-amber-600 active:text-amber-600">
             <button className="p-1 rounded-4xl" onClick={ToggleTheme}>
-                {theme === "dark" ? <Moon size={30}/> : <Sun size={30}/> }
+                {theme === "dark" ? <Sun size={30}/> : <Moon size={30}/> }
 
             </button>
         </div>

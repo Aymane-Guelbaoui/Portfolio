@@ -43,7 +43,7 @@ function Layout() {
           
           <div className="absolute top-3 left-4">
             <NavLink to="/">
-              <h1 className="text-4xl font-extrabold">AG</h1>
+              <h1 className="text-4xl font-extrabold hover:text-amber-600 active:text-amber-600">AG</h1>
             </NavLink>
           </div>
 
@@ -52,12 +52,24 @@ function Layout() {
 
           
           <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gap-8">
-            <NavLink to="/" className="hover:text-amber-700 text-base whitespace-nowrap">Home</NavLink>
-            <NavLink to="/about" className="hover:text-amber-700 text-base whitespace-nowrap">About</NavLink>
-            <NavLink to="/projects" className="hover:text-amber-700 text-base whitespace-nowrap">Projects</NavLink>
-            <NavLink to="/contact" className="hover:text-amber-700 text-base whitespace-nowrap">Contact</NavLink>
-            
-            
+            {["Home", "About", "Projects", "Contact"].map((link) => (
+              <NavLink
+                key={link}
+                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
+                className="relative group text-base hover:text-amber-700"
+              >
+                {({ isActive }) => (
+                  <>
+                    {link}
+                    <span
+                      className={`absolute left-0 -bottom-1 h-[2px] bg-amber-600 transition-all ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                  </>
+                )}
+              </NavLink>
+            ))}
           </div>
 
           
@@ -67,12 +79,12 @@ function Layout() {
 
           
           <button 
-            className="md:hidden z-50 focus:outline-none absolute top-3 right-3"
+            className="md:hidden z-50 focus:outline-none absolute top-3 right-3 active:text-amber-600"
             onClick={() => setOpen(!open)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            </svg> 
           </button>
         </div>
 
@@ -85,10 +97,16 @@ function Layout() {
               boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
             }}
           >
-            <NavLink to="/" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Home</NavLink>
-            <NavLink to="/about" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>About</NavLink>
-            <NavLink to="/projects" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Projects</NavLink>
-            <NavLink to="/contact" className="hover:text-amber-700 text-m py-2" onClick={() => setOpen(false)}>Contact</NavLink>
+            {["Home", "About", "Projects", "Contact"].map((link) => (
+              <NavLink
+                key={link}
+                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
+                className="relative group text-base active:text-amber-600"
+                >
+                {link}
+                <span className=""></span>
+              </NavLink>
+            ))}
             <div className="pt-2">
               <Theme />
             </div>
