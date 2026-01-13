@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Home as HomeIcon } from 'lucide-react';
 import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact';
-import About from '../../Pages/About';
+import About from '../../Pages/About/About';
 import Theme from '../Theme/Theme';
 import Projects from '../../Pages/Projects';
 
@@ -87,34 +87,62 @@ function Layout() {
             </svg> 
           </button>
         </div>
+       <AnimatePresence>
+          {isMobile && open && (
+              <>
+                {/* Backdrop */}
+                <motion.div
+                  className="fixed inset-0 bg-black/50 z-40"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setOpen(false)}
+                />
 
-        {/* Mobile menu */}
-        {isMobile && open && (
-          <div 
-            className="flex flex-col gap-1 px-4 py-4 absolute top-full left-0 right-0 z-40"
+                {/* Sidebar */}
+                <motion.div
+            className="fixed top-0 right-0 h-full z-50 flex flex-col px-6 py-8"
             style={{ 
+              width: "75vw",
               backgroundColor: "var(--nav-bg)",
-              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)" 
+              boxShadow: "-10px 0 25px rgba(0,0,0,0.25)"
             }}
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 260, damping: 25 }}
           >
-            {["Home", "About", "Projects", "Contact"].map((link) => (
-              <NavLink
-                key={link}
-                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                className="relative group text-base active:text-amber-600"
+            {/* Close X */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-4 left-4 text-2xl font-bold hover:text-amber-600"
+            >
+              ✕
+            </button>
+
+            {/* Links */}
+            <div className="flex flex-col gap-6 mt-16">
+              {["Home", "About", "Projects", "Contact"].map((link) => (
+                <NavLink
+                  key={link}
+                  to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
+                  className="text-lg font-medium active:text-amber-600"
+                  onClick={() => setOpen(false)}
                 >
-                {link}
-                <span className=""></span>
-              </NavLink>
-            ))}
-            <div className="pt-2">
+                  {link}
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Theme switch */}
+            <div className="mt-auto pt-6">
               <Theme />
             </div>
-          </div>
-          
-        )}
+          </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </nav>
-
       <div className="">
         <Outlet/>
       </div>

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
+
 const certificates = [
   { id: 1, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-1.png" },
   { id: 2, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-2.png" },
   { id: 3, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-4.png" },
-  { id: 4, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-3.png" }
+  { id: 4, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-3.png" },
+  { id: 5, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-1.png" },
+  { id: 6, issuer: "Alx", img: "/Images/Certificates/Alx-Cert-2.png" },
+  { id: 7, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-4.png" },
+  { id: 8, issuer: "Coursera", img: "/Images/Certificates/Coursera-Cert-3.png" }
 ];
 
 export default function About() {
@@ -72,7 +77,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Certificates */}
+      {/* CertiFicates */}
       <div className="w-full mt-12 flex flex-col items-center">
         <h3 className="text-lg font-semibold uppercase tracking-wider text-center mb-4 text-gray-300">
           Certifications
