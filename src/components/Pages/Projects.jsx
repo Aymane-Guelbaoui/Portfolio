@@ -44,6 +44,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="mt-6 flex items-center justify-center">
+      <div class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-40%,#bb4d00,rgba(255,255,255,0))]"></div>
       <div className="max-w-4xl w-full px-6">
         <h2 className="text-4xl font-bold text-center mb-2">
           My <span className="text-amber-700">Projects</span>

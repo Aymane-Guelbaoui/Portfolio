@@ -4,8 +4,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center"
     >
+      <div className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,var(--hero-bg)_40%,#bb4d00)]"></div>
       <div className="max-w-6xl w-full px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           

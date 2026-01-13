@@ -62,7 +62,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mt-20 flex items-center">
+    <section id="contact" className="mt-25  flex items-center">
+      <div class="absolute top-0 -z-10 h-full w-full"><div class="absolute bottom-auto left-0 right-auto top-0 h-[500px] w-[500px] -translate-x-[-40%] translate-y-[30%] rounded-full bg-[#bb4d00] opacity-30 blur-[80px]"></div></div>
       <div className="max-w-6xl mx-auto px-6 w-full">
         <h2 className="text-4xl font-bold text-center mb-16">
           Get In <span className="text-amber-600">Touch</span>

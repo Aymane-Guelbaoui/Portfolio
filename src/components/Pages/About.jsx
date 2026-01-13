@@ -22,7 +22,8 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="min-h-screen flex flex-col items-center py-10 px-6">
+    <section id="about" className="relative min-h-screen flex flex-col items-center py-10 px-6">
+      <div class="absolute top-0 -z-10 h-full w-full"><div class="absolute bottom-auto left-auto right-0 top-0 h-[600px] w-[600px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[#bb4d00] opacity-20 blur-[80px]"></div></div>
       <h2 className="text-4xl font-bold mb-8">
         About <span className="text-amber-600">Me</span>
       </h2>

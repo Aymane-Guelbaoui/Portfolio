@@ -21,6 +21,9 @@ body[data-theme="light"] {
 
     --surface-bg: #ffffff;
     --case-shadow: 10px 10px 12px rgba(0, 0, 0, 0.12);
+
+    --hero-bg:#ffffff;
+
 }
 
 body[data-theme="dark"] {
@@ -34,6 +37,8 @@ body[data-theme="dark"] {
 
     --surface-bg: #111;
     --case-shadow: 10px 10px 12px rgba(212, 148, 27, 0.1);
+
+    --hero-bg:#111;
 
 
     
