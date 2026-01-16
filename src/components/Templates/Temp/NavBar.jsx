@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, NavLink, Outlet, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, NavLink, Outlet } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 
-import { Home as HomeIcon } from 'lucide-react';
+
 import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact';
 import About from '../../Pages/About/About';
@@ -13,13 +13,16 @@ import Projects from '../../Pages/Projects';
 
 function Layout() {
   const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
+
 
   const [theme, setTheme] = useState(
     document.body.getAttribute("data-theme") || "light"
   );
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
 
@@ -150,7 +153,7 @@ function Layout() {
   );
 }
 
-export default function NavBar() {
+export default function AppRouter() {
   const router = createBrowserRouter([
     {
       path: "/",
